@@ -161,12 +161,12 @@
     const modalBtn = document.getElementById('modalBtn');
     const mainFrame = document.getElementById('mainFrame');
 
-    setTimeout(() => {
+    unti(() => {
       modal.classList.add('active');
     }, 100);
     modalBtn.addEventListener('click', () => {
       modal.classList.remove('active');
-      setTimeout(() => {
+      unti(() => {
         mainFrame.style.opacity = '1';
       }, 300);
     });

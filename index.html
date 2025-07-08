@@ -133,30 +133,34 @@
 <body>
   <div class="modal" id="modal">
     <div class="modal-box">
-      <div class="modal-title"></div>
-    <div class="modal-msg">
-  著作権的にほぼアウトなので<br>
-  自己責任で見てください。<br><br>
-  <span id="version">バージョン取得中...</span><br>
-  @kiyu4776 @calcsupv<br>
-  変更予定リンク<br>
-  <a href="https://render-ln4r.onrender.com" target="_blank" style="color:#007aff; text-decoration: underline;">
-    https://render-ln4r.onrender.com
-  </a><br>
-<br>↓↓↓↓↓↓↓サポーとサーバー↓↓↓↓↓↓↓5人はいってくれた」<br>
-      <a href="https://discord.gg/UUEYtvXA4v" target="_blank" style="color:#007aff; text-decoration: underline;">
-    discordサーバ
-  </a>
-</div>
-<div/>
+      <div class="modal-title">注意</div>
+      <div class="modal-msg">
+        著作権的にほぼアウトなので<br>
+        自己責任で見てください。<br><br>
+        <span id="version">バージョン取得中...</span><br>
+        @kiyu4776 @calcsupv<br>
+        変更予定リンク<br>
+        <a href="https://render-ln4r.onrender.com" target="_blank" style="color:#007aff; text-decoration: underline;">
+          https://render-ln4r.onrender.com
+        </a><br>
+        <br>↓↓↓↓↓↓↓サポーとサーバー↓↓↓↓↓↓↓5人はいってくれた」<br>
+        <a href="https://discord.gg/UUEYtvXA4v" target="_blank" style="color:#007aff; text-decoration: underline;">
+          discordサーバ
+        </a>
+      </div>
+      <div class="modal-btn-container">
+        <button id="modalBtn" class="modal-btn">OK</button>
+      </div>
     </div>
   </div>
+
   <iframe id="mainFrame" src="index/v3.html"></iframe>
 
   <script>
     const modal = document.getElementById('modal');
     const modalBtn = document.getElementById('modalBtn');
     const mainFrame = document.getElementById('mainFrame');
+
     setTimeout(() => {
       modal.classList.add('active');
     }, 100);

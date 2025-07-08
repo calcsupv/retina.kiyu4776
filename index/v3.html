@@ -549,7 +549,7 @@
   <div>動画を読み込んでいます...</div>
 </div>
 
-<div class="ver">v1.3.0-github</div>
+<div class="ver">v3.0-static</div>
 <div class="countdown" id="countdown"></div>
 <div id="searchArea" role="search">
   <input id="search" type="text" placeholder="動画タイトルで検索" aria-label="動画タイトルで検索" autocomplete="off" />
@@ -697,7 +697,6 @@
       const res = await fetch('./date.json');
       if (!res.ok) throw new Error('読み込み失敗');
       videos = await res.json();
-      // 単一オブジェクトなら配列に変換
       if (!Array.isArray(videos)) videos = [videos];
       renderVideos();
     } catch (err) {
@@ -793,18 +792,19 @@
     const now = new Date();
     const diff = targetDate - now;
     
-    if (diff <= 0) {
-      document.getElementById('countdown').textContent = 'glitchさようなら…';
-      return;
-    }
+if (diff <= 0) {
+  document.getElementById('countdown').innerHTML = 'glitchさようなら…<br>また会う日まで…<br>';
+  return;
+}
+
     
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const day = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((diff % (1000 * 60)) / 1000);
     
     document.getElementById('countdown').textContent = 
-      `glitchサ終まであと ${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+      `glitchサ終まであと ${day}日 ${hour}時間 ${minute}分 ${second}秒`;
   }
   
   document.addEventListener('DOMContentLoaded', () => {

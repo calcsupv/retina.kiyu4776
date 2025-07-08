@@ -143,9 +143,9 @@
         <a href="https://calcsupv.github.io/retina.kiyu4776/" target="_blank" style="color:#007aff; text-decoration: underline;">
           https://render-ln4r.onrender.com
         </a><br>
-        <br>↓↓↓↓↓↓↓サポーとサーバー↓↓↓↓↓↓↓5人はいってくれた」<br>
+        <br>↓↓↓↓↓↓↓サポートサーバー↓↓↓↓↓↓↓<br>
         <a href="https://discord.gg/UUEYtvXA4v" target="_blank" style="color:#007aff; text-decoration: underline;">
-          discordサーバ
+          Discordサーバー
         </a>
       </div>
       <div class="modal-btn-container">
@@ -160,13 +160,19 @@
     const modal = document.getElementById('modal');
     const modalBtn = document.getElementById('modalBtn');
     const mainFrame = document.getElementById('mainFrame');
+    const versionEl = document.getElementById('version');
+    try {
+      versionEl.textContent = 'v3.0';
+    } catch (e) {
+      console.error('バージョン表示エラー:', e);
+    }
 
-    unti(() => {
+    setTimeout(() => {
       modal.classList.add('active');
     }, 100);
     modalBtn.addEventListener('click', () => {
       modal.classList.remove('active');
-      unti(() => {
+      setTimeout(() => {
         mainFrame.style.opacity = '1';
       }, 300);
     });

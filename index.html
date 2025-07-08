@@ -1,5 +1,3 @@
-
-indexこれ
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -135,49 +133,35 @@ indexこれ
 <body>
   <div class="modal" id="modal">
     <div class="modal-box">
-      <div class="modal-title"></div>
-    <div class="modal-msg">
-  著作権的にほぼアウトなので<br>
-  自己責任で見てください。<br><br>
-  <span id="version">バージョン取得中...</span><br>
-  @kiyu4776 @calcsupv<br>
-  変更予定リンク<br>
-  <a href="https://render-ln4r.onrender.com" target="_blank" style="color:#007aff; text-decoration: underline;">
-    https://render-ln4r.onrender.com
-  </a><br>
-<br>↓↓↓↓↓↓↓サポーとサーバー↓↓↓↓↓↓↓5人はいってくれた」<br>
-      <a href="https://discord.gg/UUEYtvXA4v" target="_blank" style="color:#007aff; text-decoration: underline;">
-    discordサーバ
-  </a>
-</div>
-
-
-
+      <div class="modal-title">ご注意</div>
+      <div class="modal-msg">
+        著作権的に問題がある可能性があるため、<br>
+        自己責任でご利用ください。<br><br>
+        バージョン: v4.0<br>
+        @kiyu4776 @calcsupv<br><br>
+        新しいリンク:<br>
+        <a href="https://render-ln4r.onrender.com" target="_blank" style="color:#007aff; text-decoration: underline;">
+          https://render-ln4r.onrender.com
+        </a><br><br>
+        ↓↓↓ Discordサーバー ↓↓↓<br>
+        <a href="https://discord.gg/UUEYtvXA4v" target="_blank" style="color:#007aff; text-decoration: underline;">
+          サポートサーバーへ参加
+        </a>
+      </div>
       <div class="modal-btn-container">
         <button class="modal-btn" id="modalBtn">了解</button>
       </div>
     </div>
   </div>
-<iframe id="mainFrame" src="index/v4.html"></iframe>
+  <iframe id="mainFrame" src="index/v3.html"></iframe>
+
   <script>
     const modal = document.getElementById('modal');
     const modalBtn = document.getElementById('modalBtn');
     const mainFrame = document.getElementById('mainFrame');
-    const versionEl = document.getElementById('version');
-
-fetch('/version.json')
-  .then(res => res.json())
-  .then(data => {
-    versionEl.textContent = data.version || '不明';
-  })
-  .catch(() => {
-    versionEl.textContent = '取得失敗';
-  });
-
     setTimeout(() => {
       modal.classList.add('active');
     }, 100);
-
     modalBtn.addEventListener('click', () => {
       modal.classList.remove('active');
       setTimeout(() => {
